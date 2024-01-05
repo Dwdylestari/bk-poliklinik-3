@@ -1,3 +1,20 @@
+<style>
+    .content-wrapper {
+        background: url('https://halosemarang.id/wp-content/uploads/2023/05/OK-2-RUU-Kesehatan-Jamin-Pendidikan-Spesialis-Murah-dan-Transparan-732x488.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        color: white; /* warna teks */
+    }
+    
+    .content-header h1 {
+        font-size: 3em; /* ubah ukuran font sesuai kebutuhan */
+    }
+
+    .card-body {
+        background: url('https://halosemarang.id/wp-content/uploads/2023/05/OK-2-RUU-Kesehatan-Jamin-Pendidikan-Spesialis-Murah-dan-Transparan-732x488.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -7,7 +24,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Poliklinik BK</a></li>
+                    <li class="breadcrumb-item"><a href="#">Poli Bimbingan Karir</a></li>
                     <li class="breadcrumb-item active">Daftar Poli</li>
                     </ol>
                 </div>
@@ -17,19 +34,19 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <?php
-                        if (isset($_SESSION['success'])) {
-                            echo "<p class='text-success mt-1 mb-3'>" . $_SESSION['success'] . "</p>";
-                            unset($_SESSION['success']);
-                        }
-                    ?>
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <p class="my-2">Daftar Poli</p>
-                        </div>
-                        <div class="card-body">
-                            <form action="<?= $BASE_PASIEN_CONTROLLERS . '/daftar_poli/create.php' ?>" method="POST">
+            <div class="col-12 col-md-6 col-lg-4 mx-auto">
+    <?php
+        if (isset($_SESSION['success'])) {
+            echo "<p class='text-success mt-1 mb-3'>" . $_SESSION['success'] . "</p>";
+            unset($_SESSION['success']);
+        }
+    ?>
+    <div class="card card-dark">
+        <div class="card-header">
+            <p class="my-2">Daftar Poli</p>
+        </div>
+        <div class="card-body">
+            <form action="<?= $BASE_PASIEN_CONTROLLERS . '/daftar_poli/create.php' ?>" method="POST">
                                 <div class="form-group">
                                     <label class="form-label">Nomor Rekam Medis</label>
                                     <input type="text" class="form-control" name="no_rm" value="<?= $_SESSION['no_rm'] ?>" readonly>
@@ -37,7 +54,7 @@
                                 <div class="form-group">
                                     <label class="form-label">Poli</label>
                                     <select name="poli" class="form-control">
-                                        <option value="">-Pilih Poli-</option>
+                                        <option value="">Pilih Poli</option>
                                         <?php 
                                             include "../../../config/connection.php";
 
@@ -53,7 +70,7 @@
                                 <div class="form-group">
                                     <label class="form-label">Jadwal</label>
                                     <select name="jadwal" class="form-control">
-                                        <option value="">-Pilih Jadwal-</option>
+                                        <option value="">Pilih Jadwal</option>
                                         <?php 
                                             include "../../../config/connection.php";
 
@@ -71,7 +88,7 @@
                                     <textarea name="keluhan" cols="10" rows="5" class="form-control" placeholder="Masukkan keluhan anda"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary" name="submit">Daftar</button>
+                                    <button type="submit" class="btn btn-dark" name="submit">Daftar</button>
                                 </div>
                             </form>
                         </div>

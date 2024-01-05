@@ -1,3 +1,20 @@
+<style>
+    .content-wrapper {
+        background: url('https://halosemarang.id/wp-content/uploads/2023/05/OK-2-RUU-Kesehatan-Jamin-Pendidikan-Spesialis-Murah-dan-Transparan-732x488.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        color: white; /* warna teks */
+    }
+    
+    .content-header h1 {
+        font-size: 3em; /* ubah ukuran font sesuai kebutuhan */
+    }
+
+    .card-body {
+        background: url('https://halosemarang.id/wp-content/uploads/2023/05/OK-2-RUU-Kesehatan-Jamin-Pendidikan-Spesialis-Murah-dan-Transparan-732x488.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -7,7 +24,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Poliklinik BK</a></li>
+                    <li class="breadcrumb-item"><a href="#">Poli Bimbingan Karir</a></li>
                     <li class="breadcrumb-item active">Memeriksa Pasien</li>
                     </ol>
                 </div>
@@ -16,7 +33,7 @@
     </div>
     <section class="content">
         <div class="container-fluid">
-            <div class="card card-secondary">
+            <div class="card card-dark">
                 <div class="card-header">
                     <p class="my-2 card-title">Tabel Data Daftar Periksa</p>
                 </div>
@@ -59,7 +76,7 @@
                                         <?php 
                                             if ($periksa['status_periksa'] == 0) {
                                                 echo '
-                                                    <a href="'.$BASE_DOKTER_PAGES.'?page=periksa&id_daftar_poli='.$periksa['id_daftar_poli'].'" class="btn btn-primary">
+                                                    <a href="'.$BASE_DOKTER_PAGES.'?page=periksa&id_daftar_poli='.$periksa['id_daftar_poli'].'" class="btn btn-dark">
                                                         <i class="fas fa-stethoscope"></i>
                                                          Periksa
                                                     </a>

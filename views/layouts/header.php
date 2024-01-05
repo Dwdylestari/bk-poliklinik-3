@@ -96,7 +96,6 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Dashboard
-                                    <span class="right badge badge-success">Admin</span>
                                 </p>
                             </a>
                         </li>
@@ -105,7 +104,6 @@
                                 <i class="nav-icon fas fa-pills"></i>
                                 <p>
                                     Obat
-                                    <span class="right badge badge-success">Admin</span>
                                 </p>
                             </a>
                         </li>';
@@ -116,7 +114,6 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Dashboard
-                                    <span class="right badge badge-danger">Dokter</span>
                                 </p>
                             </a>
                         </li>
@@ -125,7 +122,6 @@
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>
                                     Jadwal Periksa
-                                    <span class="right badge badge-danger">Dokter</span>
                                 </p>
                             </a>
                         </li>
@@ -134,7 +130,6 @@
                                 <i class="nav-icon fas fa-stethoscope"></i>
                                 <p>
                                     Memeriksa Pasien
-                                    <span class="right badge badge-danger">Dokter</span>
                                 </p>
                             </a>
                         </li>
@@ -143,7 +138,6 @@
                                 <i class="nav-icon fas fa-notes-medical"></i>
                                 <p>
                                     Riwayat Pasien
-                                    <span class="right badge badge-danger">Dokter</span>
                                 </p>
                             </a>
                         </li>';
@@ -154,7 +148,6 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Dashboard
-                                    <span class="right badge badge-warning">Pasien</span>
                                 </p>
                             </a>
                         </li>
@@ -163,7 +156,6 @@
                                 <i class="nav-icon fas fa-pills"></i>
                                 <p>
                                     Daftar Poli
-                                    <span class="right badge badge-warning">Pasien</span>
                                 </p>
                             </a>
                         </li>';

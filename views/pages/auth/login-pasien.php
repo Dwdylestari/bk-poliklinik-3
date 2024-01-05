@@ -6,12 +6,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Poliklinik | Log in</title>
+    <title>Login Pasien</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/vendor/fontawesome-free/css/all.min.css"> <!-- Font Awesome -->
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/vendor/icheck-bootstrap/icheck-bootstrap.min.css"> <!-- icheck bootstrap -->
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/public/css/adminlte.min.css"> <!-- Theme style -->
+
+    <style>
+        body {
+            background-color: #343a40; /* Warna latar belakang halaman */
+        }
+
+        .login-box {
+            background-color: #ffffff; /* Warna latar belakang kotak login */
+        }
+
+        .login-page {
+            background-image: url('https://www.releaseinsider.com/wp-content/uploads/2017/04/ilustrasi-kesehatan.jpg'); /* Ganti dengan URL gambar latar belakang dari web */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">

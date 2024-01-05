@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Poliklinik BK</a></li>
+                    <li class="breadcrumb-item"><a href="#">Poli Bimbingan Karir</a></li>
                     <li class="breadcrumb-item active">Obat</li>
                     </ol>
                 </div>
@@ -16,11 +16,11 @@
     </div>
     <section class="content">
         <div class="container-fluid">
-            <div class="card card-primary">
+            <div class="card card-dark">
                 <div class="card-header">
                     <div class="card-title my-2">Form Tambah Data Obat</div>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-dark">
                     <?php
                         include "../../../config/connection.php";
 
@@ -67,11 +67,11 @@
                     </form>
                 </div>
             </div>
-            <div class="card card-secondary">
+            <div class="card card-dark">
                 <div class="card-header">
                     <p class="my-2 card-title">Tabel Data Obat</p>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-dark">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>

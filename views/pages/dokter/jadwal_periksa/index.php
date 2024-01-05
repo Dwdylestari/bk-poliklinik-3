@@ -1,3 +1,20 @@
+<style>
+    .content-wrapper {
+        background: url('https://halosemarang.id/wp-content/uploads/2023/05/OK-2-RUU-Kesehatan-Jamin-Pendidikan-Spesialis-Murah-dan-Transparan-732x488.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        color: white; /* warna teks */
+    }
+    
+    .content-header h1 {
+        font-size: 3em; /* ubah ukuran font sesuai kebutuhan */
+    }
+
+    .card-body {
+        background: url('https://halosemarang.id/wp-content/uploads/2023/05/OK-2-RUU-Kesehatan-Jamin-Pendidikan-Spesialis-Murah-dan-Transparan-732x488.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -7,7 +24,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Poliklinik BK</a></li>
+                    <li class="breadcrumb-item"><a href="#">Poli Bimbingan Karir</a></li>
                     <li class="breadcrumb-item active">Jadwal Periksa</li>
                     </ol>
                 </div>
@@ -16,7 +33,7 @@
     </div>
     <section class="content">
         <div class="container-fluid">
-            <div class="card card-secondary">
+            <div class="card card-dark">
                 <div class="card-header">
                     <div class="d-flex align-items-center justify-content-between">
                         <p class="my-2 card-title">Tabel Data Jadwal Periksa</p>

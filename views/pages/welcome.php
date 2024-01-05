@@ -9,13 +9,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Sistem Poliklinik Bimbingan Karir</title>
-    <!-- ini adalah Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- ini untuk Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- ini Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/public/css/welcome_styles.css">
+    <title>Poliklinik Bimbingan Karir</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /><!-- ini adalah Favicon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" /> <!-- ini untuk Bootstrap icons-->
+    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/public/css/welcome_styles.css"> <!-- ini Core theme CSS (includes Bootstrap)-->
+
+    <style>
+        body {
+            background-image: url('https://statik.tempo.co/data/2015/06/03/id_405523/405523_620.jpg'); /* Ganti dengan URL gambar latar belakang dari web */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Sesuaikan warna teks sesuai kebutuhan */
+        .navbar,
+        .display-5,
+        .feature,
+        .main-footer {
+            color: #ffffff;
+        }
+
+        .feature a {
+            color: #ffffff;
+        }
+
+        .feature a:hover {
+            color: #ffc107; /* Warna hover sesuaikan dengan kebutuhan */
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +49,7 @@
         </div>
     </nav>
     <!-- ini Header-->
-    <header class="py-5" style="background-color: #000000;"> <!-- ini untuk mengubah warna Banner -->
+    <header class="py-3" style="background-color: #000000; margin-top: -20px;"> <!-- Sesuaikan nilai margin-top sesuai kebutuhan -->
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
@@ -42,7 +64,7 @@
     <section class="py-5 border-bottom" id="features">
         <div class="container px-5 my-5">
             <div class="row g-5">
-                <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person"></i></div>
                     <h2 class="h4 fw-bolder">Login Admin</h2>
                     <a class="text-decoration-none" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/views/pages/auth/login-admin.php">
@@ -50,7 +72,7 @@
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person"></i></div>
                     <h2 class="h4 fw-bolder">Login Dokter</h2>
                     <a class="text-decoration-none" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/views/pages/auth/login-dokter.php">
@@ -58,7 +80,7 @@
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="col-lg-4 mb-5 mb-lg-0">
                     <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i class="bi bi-person"></i></div>
                     <h2 class="h4 fw-bolder">Login Pasien</h2>
                     <a class="text-decoration-none" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/views/pages/auth/login-pasien.php">
@@ -69,12 +91,12 @@
             </div>
         </div>
     </section>
-        </div>
-    </section>
+
     <!-- ini Footer-->
-    <footer class="main-footer px-4 py-2">
+    <footer class="main-footer px-4 py-2" style="text-align: center;">
         <strong>Copyright ©
             <a href="">Dewi Lestari</a>
+        </strong>
     </footer>
     <!-- ini Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

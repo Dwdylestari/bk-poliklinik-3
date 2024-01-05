@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/vendor/fontawesome-free/css/all.min.css"> <!-- Font Awesome -->
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/vendor/icheck-bootstrap/icheck-bootstrap.min.css"> <!-- icheck bootstrap -->
     <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/bk-poliklinik/public/css/adminlte.min.css"> <!-- Theme style -->
+    
+    <style>
+        body {
+            background-color: #343a40; /* Warna latar belakang halaman */
+        }
+
+        .login-box {
+            background-color: #ffffff; /* Warna latar belakang kotak login */
+        }
+
+        .login-page {
+            background-image: url('https://www.releaseinsider.com/wp-content/uploads/2017/04/ilustrasi-kesehatan.jpg'); /* Ganti dengan URL gambar latar belakang dari web */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">
