@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 04, 2024 at 09:46 AM
--- Server version: 5.7.39
--- PHP Version: 8.2.0
+-- Generation Time: Jan 05, 2024 at 01:38 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,18 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `username` varchar(50) NOT NULL,
   `nama` varchar(150) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `nama`, `password`) VALUES
-(1, 'Admin', 'Admin Edit', '0192023a7bbd73250516f069df18b500');
+(1, 'Admin', 'Admin Poliklinik', '0192023a7bbd73250516f069df18b500');
 
 -- --------------------------------------------------------
 
@@ -48,21 +48,13 @@ INSERT INTO `admin` (`id`, `username`, `nama`, `password`) VALUES
 --
 
 CREATE TABLE `daftar_poli` (
-  `id` int(11) NOT NULL,
-  `id_pasien` int(11) NOT NULL,
-  `id_jadwal` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `id_pasien` int NOT NULL,
+  `id_jadwal` int NOT NULL,
   `keluhan` text,
-  `no_antrian` int(10) UNSIGNED DEFAULT NULL,
+  `no_antrian` int UNSIGNED DEFAULT NULL,
   `status_periksa` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `daftar_poli`
---
-
-INSERT INTO `daftar_poli` (`id`, `id_pasien`, `id_jadwal`, `keluhan`, `no_antrian`, `status_periksa`) VALUES
-(3, 10, 1, 'Panas dalam', 1, 1),
-(4, 13, 1, 'Sakit Perut', 2, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -71,18 +63,10 @@ INSERT INTO `daftar_poli` (`id`, `id_pasien`, `id_jadwal`, `keluhan`, `no_antria
 --
 
 CREATE TABLE `detail_periksa` (
-  `id` int(11) NOT NULL,
-  `id_periksa` int(11) NOT NULL,
-  `id_obat` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `detail_periksa`
---
-
-INSERT INTO `detail_periksa` (`id`, `id_periksa`, `id_obat`) VALUES
-(7, 1, 3),
-(10, 2, 3);
+  `id` int NOT NULL,
+  `id_periksa` int NOT NULL,
+  `id_obat` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -91,11 +75,11 @@ INSERT INTO `detail_periksa` (`id`, `id_periksa`, `id_obat`) VALUES
 --
 
 CREATE TABLE `dokter` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `no_hp` varchar(50) DEFAULT NULL,
-  `id_poli` int(11) NOT NULL
+  `id_poli` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 --
@@ -103,7 +87,7 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`id`, `nama`, `alamat`, `no_hp`, `id_poli`) VALUES
-(11, 'Adi', 'Semarang', '0489921018', 1);
+(11, 'Dewi', 'Semarang', '0489921018', 1);
 
 -- --------------------------------------------------------
 
@@ -112,19 +96,19 @@ INSERT INTO `dokter` (`id`, `nama`, `alamat`, `no_hp`, `id_poli`) VALUES
 --
 
 CREATE TABLE `jadwal_periksa` (
-  `id` int(11) NOT NULL,
-  `id_dokter` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `id_dokter` int NOT NULL,
   `hari` enum('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu') DEFAULT NULL,
   `jam_mulai` time DEFAULT NULL,
   `jam_selesai` time DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `jadwal_periksa`
 --
 
 INSERT INTO `jadwal_periksa` (`id`, `id_dokter`, `hari`, `jam_mulai`, `jam_selesai`) VALUES
-(1, 11, 'Rabu', '09:36:34', '12:35:34');
+(1, 11, 'Senin', '09:36:34', '12:35:34');
 
 -- --------------------------------------------------------
 
@@ -133,20 +117,18 @@ INSERT INTO `jadwal_periksa` (`id`, `id_dokter`, `hari`, `jam_mulai`, `jam_seles
 --
 
 CREATE TABLE `obat` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama_obat` varchar(50) NOT NULL,
   `kemasan` varchar(35) NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `harga` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `obat`
 --
 
 INSERT INTO `obat` (`id`, `nama_obat`, `kemasan`, `harga`) VALUES
-(1, 'Contoh Obat 2', 'Metanol 2', 250000),
-(2, 'Contoh Bilej', 'Metanol', 20000),
-(3, 'Contoh2', 'Metani', 10000);
+(1, 'Paracetamol', 'Tablet', 15000);
 
 -- --------------------------------------------------------
 
@@ -155,7 +137,7 @@ INSERT INTO `obat` (`id`, `nama_obat`, `kemasan`, `harga`) VALUES
 --
 
 CREATE TABLE `pasien` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL,
   `no_ktp` varchar(255) NOT NULL,
@@ -168,9 +150,8 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`id`, `nama`, `alamat`, `no_ktp`, `no_hp`, `no_rm`) VALUES
-(6, 'Adi', 'Semarang', '1234567890', '085294567', '082456'),
-(10, 'Bayu Aji', 'Solo', '12345', '088131013', '143580'),
-(13, 'Ayu Maharani', 'Jogjakarta', '123', '08080323', '202401-417');
+(6, 'Lestari', 'Demak', '37371234567890', '087654321', '082456'),
+(14, 'Dhamar Bagus', 'Demak', '37371234567890', '0812345678', '202401-862');
 
 -- --------------------------------------------------------
 
@@ -179,20 +160,12 @@ INSERT INTO `pasien` (`id`, `nama`, `alamat`, `no_ktp`, `no_hp`, `no_rm`) VALUES
 --
 
 CREATE TABLE `periksa` (
-  `id` int(11) NOT NULL,
-  `id_daftar_poli` int(11) NOT NULL,
+  `id` int NOT NULL,
+  `id_daftar_poli` int NOT NULL,
   `tgl_periksa` datetime NOT NULL,
   `catatan` text,
-  `biaya_periksa` int(11) DEFAULT NULL
+  `biaya_periksa` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
-
---
--- Dumping data for table `periksa`
---
-
-INSERT INTO `periksa` (`id`, `id_daftar_poli`, `tgl_periksa`, `catatan`, `biaya_periksa`) VALUES
-(1, 3, '2024-01-13 06:10:00', 'Minum obat secara teratur agar cepat sembuh dan ini itu updatean', 10000),
-(2, 4, '2024-01-10 09:31:00', 'Ini update catatan', 10000);
 
 -- --------------------------------------------------------
 
@@ -201,10 +174,10 @@ INSERT INTO `periksa` (`id`, `id_daftar_poli`, `tgl_periksa`, `catatan`, `biaya_
 --
 
 CREATE TABLE `poli` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama_poli` varchar(25) NOT NULL,
   `keterangan` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `poli`
@@ -286,55 +259,55 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `daftar_poli`
 --
 ALTER TABLE `daftar_poli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `detail_periksa`
 --
 ALTER TABLE `detail_periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `dokter`
 --
 ALTER TABLE `dokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `jadwal_periksa`
 --
 ALTER TABLE `jadwal_periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `periksa`
 --
 ALTER TABLE `periksa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `poli`
 --
 ALTER TABLE `poli`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
